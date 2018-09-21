@@ -7,15 +7,28 @@
 import turtle
 
 
-def main():
+def draw_pentagram(size, speed):
     count = 1
-    length = 50
-    while count <= 25:
-        turtle.forward(length)
+
+    while count <= 5:
+        turtle.forward(size)
         turtle.right(144)
-        if count % 5 == 0:
-            length += 50
+        turtle.speed(speed)
         count += 1
+
+    if size <= 250:
+        size += 50
+        speed += 0.5
+        draw_pentagram(size, speed)
+
+
+def main():
+    length = 50
+    speed = 3
+    turtle.penup()
+    turtle.backward(150)
+    turtle.pendown()
+    draw_pentagram(length, speed)
 
     turtle.exitonclick()
 
