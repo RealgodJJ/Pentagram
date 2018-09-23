@@ -10,9 +10,10 @@ import turtle
 
 def draw_branch(branch_length):
     pace = 15
-    turtle.width(3)
+    turtle.width(5)
     if branch_length > 5:
         if branch_length - 2 * pace < 5:
+            turtle.width(3)
             turtle.color('green')
 
         # 绘制右侧树枝
